@@ -1,0 +1,52 @@
+{
+  "manifest_version": 2,
+  "name": "TokenLens",
+  "version": "1.0.0",
+  "description": "See every token. Know every cost — track LLM token usage across Claude, ChatGPT, Gemini, and more.",
+
+  "permissions": [
+    "storage",
+    "https://api.anthropic.com/*",
+    "https://claude.ai/*",
+    "https://api.openai.com/*",
+    "https://chat.openai.com/*",
+    "https://generativelanguage.googleapis.com/*"
+  ],
+
+  "background": {
+    "scripts": [
+      "lib/costCalculator.js",
+      "lib/storage.js",
+      "background/service-worker.js"
+    ],
+    "persistent": false
+  },
+
+  "content_scripts": [
+    {
+      "matches": [
+        "https://claude.ai/*",
+        "https://chat.openai.com/*",
+        "https://gemini.google.com/*"
+      ],
+      "js": ["content/bridge.js"],
+      "run_at": "document_start"
+    }
+  ],
+
+  "web_accessible_resources": [
+    "content/injector.js"
+  ],
+
+  "browser_action": {
+    "default_popup": "popup/index.html",
+    "default_title": "TokenLens — LLM Token Tracker"
+  },
+
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "tokenlens@extension",
+      "strict_min_version": "89.0"
+    }
+  }
+}

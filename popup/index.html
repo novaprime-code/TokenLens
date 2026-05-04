@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TokenLens</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+
+    <!-- ── Header ──────────────────────────────────────────────────────────── -->
+    <header class="header">
+      <div class="logo">
+        <span class="logo-icon" aria-hidden="true">🔭</span>
+        <span class="logo-text">TokenLens</span>
+      </div>
+      <button id="btn-clear" class="btn-icon" title="Clear all TokenLens data" aria-label="Clear data">
+        🗑️
+      </button>
+    </header>
+
+    <!-- ── Today's summary ─────────────────────────────────────────────────── -->
+    <section aria-labelledby="section-today">
+      <h2 id="section-today" class="section-title">Today</h2>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <span class="stat-label">Input tokens</span>
+          <span class="stat-value" id="today-input">—</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-label">Output tokens</span>
+          <span class="stat-value" id="today-output">—</span>
+        </div>
+        <div class="stat-card stat-card--wide">
+          <span class="stat-label">Total cost (USD)</span>
+          <span class="stat-value stat-value--cost" id="today-cost">—</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Provider breakdown ──────────────────────────────────────────────── -->
+    <section aria-labelledby="section-providers">
+      <h2 id="section-providers" class="section-title">By provider</h2>
+      <div id="provider-list" class="provider-list">
+        <p class="empty-state">No data yet. Start a chat!</p>
+      </div>
+    </section>
+
+    <!-- ── Recent sessions ─────────────────────────────────────────────────── -->
+    <section aria-labelledby="section-recent">
+      <h2 id="section-recent" class="section-title">Recent calls</h2>
+      <div id="sessions-list" class="sessions-list">
+        <p class="empty-state">No sessions recorded yet.</p>
+      </div>
+    </section>
+
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
