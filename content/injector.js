@@ -28,16 +28,15 @@
     { re: /api\.anthropic\.com\/v1\/messages/,           provider: 'anthropic' },
     { re: /claude\.ai\/api\/[^/]+\/messages/,            provider: 'anthropic' },
     // OpenAI direct API + ChatGPT web app
-    { re: /api\.openai\.com\/v1\/chat\/completions/,     provider: 'openai'    },
-    { re: /chat\.openai\.com\/backend-api\/conversation/,provider: 'openai'    },
+    { re: /api\.openai\.com\/v1\/chat\/completions/,      provider: 'openai' },
+    { re: /chat\.openai\.com\/backend-api\/conversation/, provider: 'openai' },
     // Google Gemini
-    { re: /generativelanguage\.googleapis\.com\/.+\/models\/.+:/,
-                                                          provider: 'gemini'   },
-    // Groq — fully OpenAI-compatible
-    { re: /api\.groq\.com\/openai\/v1\/chat\/completions/,provider: 'openai'  },
+    { re: /generativelanguage\.googleapis\.com\/.+\/models\/.+:/, provider: 'gemini' },
+    // Groq — fully OpenAI-compatible; mapped to 'openai' provider key
+    { re: /api\.groq\.com\/openai\/v1\/chat\/completions/, provider: 'openai' },
     // Ollama local server (default port 11434)
-    { re: /localhost:\d+\/api\/(chat|generate)/,         provider: 'ollama'    },
-    { re: /127\.0\.0\.1:\d+\/api\/(chat|generate)/,     provider: 'ollama'    },
+    { re: /localhost:\d+\/api\/(chat|generate)/,          provider: 'ollama' },
+    { re: /127\.0\.0\.1:\d+\/api\/(chat|generate)/,      provider: 'ollama' },
   ];
 
   /**

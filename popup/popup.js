@@ -51,7 +51,7 @@ var PROVIDER_META = {
   anthropic: { label: 'Anthropic / Claude', color: '#D4A373' },
   openai:    { label: 'OpenAI / ChatGPT',   color: '#74C0FC' },
   gemini:    { label: 'Google Gemini',      color: '#63E6BE' },
-  ollama:    { label: 'Ollama (local)',      color: '#A9E34B' },
+  ollama:    { label: 'Ollama (local)',       color: '#A9E34B' },
   groq:      { label: 'Groq',               color: '#FF8FAB' },
 };
 
